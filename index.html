@@ -350,9 +350,46 @@
     object-fit:cover;
     display:block;
   }
+
+  .music-btn{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:50;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1px solid rgba(216,196,143,0.55);
+    background:rgba(12,10,8,0.55);
+    backdrop-filter:blur(4px);
+    color:var(--silver-bright);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .music-btn svg{width:18px;height:18px;}
+  .music-btn:hover{
+    box-shadow:0 0 16px rgba(201,162,76,0.55);
+    transform:scale(1.05);
+  }
+  .music-btn.is-playing{
+    animation:pulse-ring 2.4s ease-out infinite;
+  }
+  @keyframes pulse-ring{
+    0%{box-shadow:0 0 0 0 rgba(201,162,76,0.45);}
+    70%{box-shadow:0 0 0 10px rgba(201,162,76,0);}
+    100%{box-shadow:0 0 0 0 rgba(201,162,76,0);}
+  }
 </style>
 </head>
 <body>
+<button id="music-toggle" class="music-btn" aria-label="Reproducir música" title="Reproducir música">
+  <svg id="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+  <svg id="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+</button>
+<audio id="bg-music" src="musica.mp3" loop preload="none"></audio>
 <div class="page">
 
   <div class="hero">
@@ -459,6 +496,26 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach(function(el){ observer.observe(el); });
+
+  var audio = document.getElementById('bg-music');
+  var musicBtn = document.getElementById('music-toggle');
+  var iconPlay = document.getElementById('icon-play');
+  var iconPause = document.getElementById('icon-pause');
+  musicBtn.addEventListener('click', function(){
+    if(audio.paused){
+      audio.play();
+      musicBtn.classList.add('is-playing');
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'block';
+      musicBtn.title = 'Pausar música';
+    } else {
+      audio.pause();
+      musicBtn.classList.remove('is-playing');
+      iconPlay.style.display = 'block';
+      iconPause.style.display = 'none';
+      musicBtn.title = 'Reproducir música';
+    }
+  });
 </script>
 </body>
 </html>
