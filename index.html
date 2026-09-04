@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años de Valeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0c0a08;
+    --charcoal:#1c1710;
+    --charcoal-2:#26200f;
+    --silver:#d8c48f;
+    --silver-bright:#f3ead2;
+    --mauve:#c9a24c;
+    --mauve-deep:#96742a;
+    --line: rgba(216,196,143,0.22);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--ink);}
+  body{
+    font-family:'Cormorant Garamond', serif;
+    color:var(--silver-bright);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:520px;
+    margin:0 auto;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(141,132,166,0.16), transparent 55%),
+      linear-gradient(180deg, var(--ink) 0%, var(--charcoal) 100%);
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+  }
+  .script{
+    font-family:'Tangerine', cursive;
+    line-height:1;
+  }
+  .smallcaps{
+    font-variant:small-caps;
+    letter-spacing:0.06em;
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:64px 32px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    min-height:520px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(12,10,8,0.15) 0%, rgba(12,10,8,0.55) 55%, rgba(12,10,8,0.92) 100%),
+      url('hero-balloons.png');
+    background-size:cover;
+    background-position:top center;
+  }
+  .hero-deco{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+  .balloon{
+    position:absolute;
+    border-radius:50%;
+    background: radial-gradient(circle at 32% 28%, #fdf3d8 0%, #e6c877 28%, #b8912f 62%, #5c4718 100%);
+    box-shadow: inset -6px -10px 18px rgba(0,0,0,0.35);
+  }
+  .balloon::after{
+    content:"";
+    position:absolute;
+    bottom:-46px;
+    left:50%;
+    width:1px;
+    height:50px;
+    background:linear-gradient(var(--silver), transparent);
+    transform:translateX(-50%);
+  }
+  .b1{width:120px;height:150px;top:-30px;left:-30px;}
+  .b2{width:70px;height:88px;top:40px;left:60px;}
+  .b3{width:56px;height:70px;top:100px;left:8px;}
+  .b4{width:90px;height:112px;top:-10px;right:-24px;}
+  .b5{width:54px;height:68px;top:70px;right:40px;}
+
+  .eyebrow{
+    font-size:0.85rem;
+    letter-spacing:0.35em;
+    color:var(--silver);
+    margin:0 0 6px;
+    position:relative;
+    z-index:1;
+  }
+  .name{
+    font-size:5rem;
+    color:var(--silver-bright);
+    margin:0;
+    position:relative;
+    z-index:1;
+  }
+  .hero-meta{
+    position:relative;
+    z-index:1;
+    margin-top:18px;
+    font-size:1.15rem;
+    color:var(--silver);
+    letter-spacing:0.04em;
+  }
+  .hero-meta span{display:block;margin-top:4px;}
+
+  /* COUNTDOWN */
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    padding:36px 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .countdown div{text-align:center;}
+  .countdown .num{
+    font-size:2.1rem;
+    color:var(--silver-bright);
+    font-weight:500;
+    line-height:1;
+  }
+  .countdown .lbl{
+    display:block;
+    margin-top:6px;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    color:var(--mauve);
+    text-transform:uppercase;
+  }
+
+  /* QUOTE + PHOTO */
+  .quote-block{
+    text-align:center;
+    padding:44px 32px 8px;
+  }
+  .quote{
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--silver-bright);
+    line-height:1.5;
+    margin:0 0 32px;
+  }
+  .frame{
+    width:220px;
+    margin:0 auto;
+    background:var(--silver-bright);
+    padding:14px 14px 42px;
+    box-shadow:0 18px 34px rgba(0,0,0,0.45);
+    transform:rotate(-1.5deg);
+  }
+  .frame .photo{
+    width:100%;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:#100e14;
+  }
+  .frame .photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .frame figcaption{
+    display:block;
+    text-align:center;
+    margin-top:14px;
+    font-size:0.95rem;
+    color:var(--ink);
+    letter-spacing:0.08em;
+  }
+  .below-photo{
+    text-align:center;
+    font-style:italic;
+    font-size:1.1rem;
+    color:var(--silver);
+    padding:28px 32px 8px;
+    line-height:1.5;
+  }
+
+  /* SECTIONS */
+  section.block{
+    padding:48px 32px;
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+  .block h2{
+    font-family:'Tangerine', cursive;
+    font-size:2.8rem;
+    font-weight:400;
+    margin:0 0 22px;
+    color:var(--silver-bright);
+  }
+  .details p{
+    margin:0 0 4px;
+    font-size:1.15rem;
+    letter-spacing:0.03em;
+    color:var(--silver-bright);
+  }
+  .btn{
+    display:inline-block;
+    margin-top:26px;
+    padding:14px 34px;
+    background:var(--mauve-deep);
+    color:var(--silver-bright);
+    text-decoration:none;
+    font-size:0.95rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    border-radius:2px;
+    transition:background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .btn:hover{
+    background:var(--mauve);
+    box-shadow:0 0 22px rgba(201,162,76,0.55), 0 0 4px rgba(243,234,210,0.4);
+    transform:translateY(-2px);
+  }
+
+  .dress p{
+    margin:0 0 4px;
+    font-size:1.1rem;
+    color:var(--silver);
+  }
+  .dress p.highlight{
+    color:var(--silver-bright);
+    margin-top:14px;
+  }
+
+  .rsvp p{
+    font-size:1.05rem;
+    color:var(--silver);
+    line-height:1.55;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .rsvp .no-faltes{
+    font-family:'Tangerine', cursive;
+    font-size:2.4rem;
+    color:var(--silver-bright);
+    margin:22px 0 0;
+  }
+
+  footer{
+    text-align:center;
+    padding:28px 20px 44px;
+    font-size:0.8rem;
+    letter-spacing:0.08em;
+    color:rgba(239,238,243,0.35);
+  }
+
+  @media (max-width:380px){
+    .name{font-size:3.6rem;}
+    .countdown{gap:16px;}
+    .countdown .num{font-size:1.6rem;}
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <p class="eyebrow smallcaps">Mis quince años</p>
+    <h1 class="name script">Valeria</h1>
+    <div class="hero-meta">
+      14 · Nov · 2026
+      <span>7:00 PM</span>
+    </div>
+  </div>
+
+  <div class="countdown reveal" id="countdown">
+    <div><span class="num" id="cd-days">00</span><span class="lbl">Días</span></div>
+    <div><span class="num" id="cd-hours">00</span><span class="lbl">Hrs</span></div>
+    <div><span class="num" id="cd-mins">00</span><span class="lbl">Min</span></div>
+    <div><span class="num" id="cd-secs">00</span><span class="lbl">Seg</span></div>
+  </div>
+
+  <div class="quote-block reveal">
+    <p class="quote">Quince vueltas al sol y lo bueno apenas comienza.<br>Te quiero en mi noche más especial.</p>
+    <figure class="frame">
+      <div class="photo">
+        <img src="valeria-photo.jpg" alt="Valeria">
+      </div>
+      <figcaption class="smallcaps">Birthday girl ♥</figcaption>
+    </figure>
+    <p class="below-photo">Acompáñame a celebrar mis XV años y<br>hagamos esta noche inolvidable.</p>
+  </div>
+
+  <section class="block reveal">
+    <h2>Ubicación</h2>
+    <div class="details">
+      <p>Club Tenis,</p>
+      <p>Cr. 45 Calle 19 Esq. Pandiaco</p>
+      <p>Pasto — Nariño</p>
+    </div>
+    <a class="btn" href="https://maps.app.goo.gl/oiT8ZrMJ66NAouBx9" target="_blank" rel="noopener">Ver ubicación</a>
+  </section>
+
+  <section class="block dress reveal">
+    <h2>Código de vestimenta</h2>
+    <p>Se sugiere vestimenta elegante.</p>
+    <p>Lindas como siempre.</p>
+    <p>Guapos y elegantes.</p>
+    <p class="highlight">¡Queremos que brilles junto a Valeria<br>en su noche especial!</p>
+  </section>
+
+  <section class="block rsvp reveal">
+    <p>Es muy importante para nosotros saber si podrás acompañarnos en este día tan especial.</p>
+    <p class="no-faltes script">¡No faltes!</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSekv5clsI1NAXqQhIUw0zrwjLkaqxrKJ7-da82s_1FWSGW8Rg/viewform" target="_blank" rel="noopener">Confirmar asistencia</a>
+  </section>
+
+  <footer>Valeria Mora Mideros · XV Años</footer>
+</div>
+
+<script>
+  var target = new Date('2026-11-14T19:00:00');
+  function tick(){
+    var now = new Date();
+    var diff = target - now;
+    if(diff < 0) diff = 0;
+    var d = Math.floor(diff / (1000*60*60*24));
+    var h = Math.floor((diff / (1000*60*60)) % 24);
+    var m = Math.floor((diff / (1000*60)) % 60);
+    var s = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  var revealEls = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(function(el){ observer.observe(el); });
+</script>
+</body>
+</html>
