@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XV Años de Valeria</title>  
+<title>XV Años de Valeria</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
@@ -516,6 +516,23 @@
       musicBtn.title = 'Reproducir música';
     }
   });
+
+  function startOnFirstTouch(){
+    if(audio.paused){
+      audio.play().then(function(){
+        musicBtn.classList.add('is-playing');
+        iconPlay.style.display = 'none';
+        iconPause.style.display = 'block';
+        musicBtn.title = 'Pausar música';
+      }).catch(function(){});
+    }
+    document.removeEventListener('click', startOnFirstTouch);
+    document.removeEventListener('touchstart', startOnFirstTouch);
+    document.removeEventListener('scroll', startOnFirstTouch);
+  }
+  document.addEventListener('click', startOnFirstTouch, { once:true });
+  document.addEventListener('touchstart', startOnFirstTouch, { once:true });
+  document.addEventListener('scroll', startOnFirstTouch, { once:true });
 </script>
 </body>
 </html>
