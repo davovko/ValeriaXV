@@ -274,6 +274,52 @@
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1;transform:none;transition:none;}
   }
+
+  .timeline{
+    position:relative;
+    max-width:300px;
+    margin:0 auto;
+    padding-left:30px;
+    text-align:left;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:4px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:linear-gradient(var(--mauve), rgba(201,162,76,0.15));
+  }
+  .timeline-item{
+    position:relative;
+    padding-bottom:26px;
+  }
+  .timeline-item:last-child{padding-bottom:0;}
+  .timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-30px;
+    top:4px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--silver-bright);
+    box-shadow:0 0 8px rgba(201,162,76,0.7);
+  }
+  .timeline-time{
+    display:block;
+    font-size:0.85rem;
+    letter-spacing:0.1em;
+    color:var(--mauve);
+    text-transform:uppercase;
+    margin-bottom:2px;
+  }
+  .timeline-label{
+    display:block;
+    font-size:1.15rem;
+    color:var(--silver-bright);
+  }
 </style>
 </head>
 <body>
@@ -316,8 +362,22 @@
     <a class="btn" href="https://maps.app.goo.gl/oiT8ZrMJ66NAouBx9" target="_blank" rel="noopener">Ver ubicación</a>
   </section>
 
+  <section class="block reveal">
+    <h2>Itinerario</h2>
+    <div class="timeline">
+      <div class="timeline-item"><span class="timeline-time">7:00 pm</span><span class="timeline-label">Llegada invitados</span></div>
+      <div class="timeline-item"><span class="timeline-time">7:30 pm</span><span class="timeline-label">Entrada quinceañera</span></div>
+      <div class="timeline-item"><span class="timeline-time">8:00 pm</span><span class="timeline-label">Brindis</span></div>
+      <div class="timeline-item"><span class="timeline-time">8:30 pm</span><span class="timeline-label">Vals</span></div>
+      <div class="timeline-item"><span class="timeline-time">9:00 pm</span><span class="timeline-label">Fotos con invitados</span></div>
+      <div class="timeline-item"><span class="timeline-time">9:30 pm</span><span class="timeline-label">Cena</span></div>
+      <div class="timeline-item"><span class="timeline-time">10:30 pm</span><span class="timeline-label">Fiesta</span></div>
+      <div class="timeline-item"><span class="timeline-time">2:00 am</span><span class="timeline-label">Fin del evento</span></div>
+    </div>
+  </section>
+
   <section class="block dress reveal">
-    <h2>Código de Vestimenta</h2>
+    <h2>Código de vestimenta</h2>
     <p>Se sugiere vestimenta elegante.</p>
     <p>Lindas como siempre.</p>
     <p>Guapos y elegantes.</p>
