@@ -245,6 +245,20 @@
     color:var(--silver-bright);
     margin-top:14px;
   }
+  .dress-illustration{
+    width:150px;
+    margin:26px auto 0;
+    display:block;
+  }
+  .dress-illustration path,
+  .dress-illustration circle,
+  .dress-illustration ellipse{
+    fill:none;
+    stroke:var(--mauve);
+    stroke-width:1.2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
 
   .rsvp p{
     font-size:1.05rem;
@@ -469,6 +483,22 @@
     <p>Lindas como siempre.</p>
     <p>Guapos y elegantes.</p>
     <p class="highlight">¡Queremos que brilles junto a Valeria<br>en su noche especial!</p>
+    <svg class="dress-illustration" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="66" cy="36" r="13"/>
+      <path d="M55,58 L64,49"/>
+      <path d="M77,58 L68,49"/>
+      <path d="M52,58 C48,70 50,95 56,118 C50,150 40,190 34,232 L98,232 C92,190 82,150 76,118 C82,95 84,70 80,58 C74,52 58,52 52,58 Z"/>
+      <path d="M80,60 C87,72 89,86 84,98 L74,109"/>
+      <circle cx="134" cy="36" r="12"/>
+      <path d="M114,56 C110,64 108,80 110,96 C112,102 118,106 122,108 L146,108 C150,106 156,102 158,96 C160,80 158,64 154,56 C146,50 122,50 114,56 Z"/>
+      <path d="M124,58 L134,80 L144,58"/>
+      <circle cx="134" cy="97" r="1.4" fill="var(--mauve)"/>
+      <path d="M154,60 C160,72 163,85 158,96 L148,104"/>
+      <path d="M122,108 L112,232"/>
+      <path d="M134,113 L124,232"/>
+      <path d="M146,108 L156,232"/>
+      <path d="M134,113 L144,232"/>
+    </svg>
   </section>
 
   <section class="block rsvp reveal">
