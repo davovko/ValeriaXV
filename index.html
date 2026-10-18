@@ -8,27 +8,28 @@
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="apple-touch-icon" href="favicon-192.png">
 <meta property="og:title" content="XV Años de Valeria">
-<meta property="og:description" content="Acompáñame a celebrar mis XV años — 14 de noviembre, 7:00 PM, Club Tenis, Pasto.">
+<meta property="og:description" content="Acompáñame a celebrar mis XV años — 14 de noviembre, 6:30 PM, Club Tenis, Pasto.">
 <meta property="og:image" content="https://davovko.github.io/ValeriaXV/hero-og.jpg">
 <meta property="og:url" content="https://davovko.github.io/ValeriaXV/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XV Años de Valeria">
-<meta name="twitter:description" content="Acompáñame a celebrar mis XV años — 14 de noviembre, 7:00 PM, Club Tenis, Pasto.">
+<meta name="twitter:description" content="Acompáñame a celebrar mis XV años — 14 de noviembre, 6:30 PM, Club Tenis, Pasto.">
 <meta name="twitter:image" content="https://davovko.github.io/ValeriaXV/hero-og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0c0a08;
-    --charcoal:#1c1710;
-    --charcoal-2:#26200f;
-    --silver:#d8c48f;
-    --silver-bright:#f3ead2;
-    --mauve:#c9a24c;
-    --mauve-deep:#96742a;
-    --line: rgba(216,196,143,0.22);
+    --ink:#f6f1ea;
+    --charcoal:#e9dfd0;
+    --charcoal-2:#d9cab6;
+    --silver:#6b5d4d;
+    --silver-bright:#383028;
+    --mauve:#a07b45;
+    --mauve-deep:#8a6a3c;
+    --line: rgba(138,106,60,0.28);
+    --paper:#fffdf8;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--ink);}
@@ -41,7 +42,9 @@
     max-width:520px;
     margin:0 auto;
     background:
-      radial-gradient(circle at 20% 0%, rgba(141,132,166,0.16), transparent 55%),
+      radial-gradient(circle at 15% 12%, rgba(182,164,141,0.28), transparent 45%),
+      radial-gradient(circle at 90% 55%, rgba(201,162,76,0.12), transparent 50%),
+      radial-gradient(circle at 10% 85%, rgba(182,164,141,0.22), transparent 45%),
       linear-gradient(180deg, var(--ink) 0%, var(--charcoal) 100%);
     min-height:100vh;
     position:relative;
@@ -59,16 +62,15 @@
   /* HERO */
   .hero{
     position:relative;
-    padding:64px 32px 40px;
+    padding:64px 32px 130px;
     text-align:center;
-    border-bottom:1px solid var(--line);
     overflow:hidden;
-    min-height:520px;
+    min-height:620px;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     background-image:
-      linear-gradient(180deg, rgba(12,10,8,0.15) 0%, rgba(12,10,8,0.55) 55%, rgba(12,10,8,0.92) 100%),
+      linear-gradient(180deg, rgba(12,10,8,0.15) 0%, rgba(12,10,8,0.55) 45%, rgba(12,10,8,0.9) 70%, rgba(246,241,234,1) 100%),
       url('hero-balloons.png');
     background-size:cover;
     background-position:top center;
@@ -103,14 +105,14 @@
   .eyebrow{
     font-size:0.85rem;
     letter-spacing:0.35em;
-    color:var(--silver);
+    color:#e6c877;
     margin:0 0 6px;
     position:relative;
     z-index:1;
   }
   .name{
     font-size:5rem;
-    color:var(--silver-bright);
+    color:#f6edd6;
     margin:0;
     position:relative;
     z-index:1;
@@ -120,7 +122,7 @@
     z-index:1;
     margin-top:18px;
     font-size:1.15rem;
-    color:var(--silver);
+    color:#e3d2a4;
     letter-spacing:0.04em;
   }
   .hero-meta span{display:block;margin-top:4px;}
@@ -164,9 +166,9 @@
   .frame{
     width:220px;
     margin:0 auto;
-    background:var(--silver-bright);
+    background:var(--paper);
     padding:14px 14px 42px;
-    box-shadow:0 18px 34px rgba(0,0,0,0.45);
+    box-shadow:0 14px 30px rgba(90,70,40,0.28);
     transform:rotate(-1.5deg);
   }
   .frame .photo{
@@ -186,7 +188,7 @@
     text-align:center;
     margin-top:14px;
     font-size:0.95rem;
-    color:var(--ink);
+    color:var(--silver-bright);
     letter-spacing:0.08em;
   }
   .below-photo{
@@ -222,7 +224,7 @@
     margin-top:26px;
     padding:14px 34px;
     background:var(--mauve-deep);
-    color:var(--silver-bright);
+    color:#fbf7ef;
     text-decoration:none;
     font-size:0.95rem;
     letter-spacing:0.12em;
@@ -232,7 +234,7 @@
   }
   .btn:hover{
     background:var(--mauve);
-    box-shadow:0 0 22px rgba(201,162,76,0.55), 0 0 4px rgba(243,234,210,0.4);
+    box-shadow:0 0 22px rgba(176,138,74,0.55), 0 0 4px rgba(255,248,230,0.5);
     transform:translateY(-2px);
   }
 
@@ -254,8 +256,8 @@
   .dress-illustration circle,
   .dress-illustration ellipse{
     fill:none;
-    stroke:var(--mauve);
-    stroke-width:1.2;
+    stroke:var(--mauve-deep);
+    stroke-width:1.5;
     stroke-linecap:round;
     stroke-linejoin:round;
   }
@@ -279,7 +281,7 @@
     padding:28px 20px 44px;
     font-size:0.8rem;
     letter-spacing:0.08em;
-    color:rgba(239,238,243,0.35);
+    color:rgba(56,48,40,0.5);
   }
 
   @media (max-width:380px){
@@ -315,7 +317,7 @@
     top:6px;
     bottom:6px;
     width:1px;
-    background:linear-gradient(var(--mauve), rgba(201,162,76,0.15));
+    background:linear-gradient(var(--mauve), rgba(160,123,69,0.12));
   }
   .timeline-item{
     position:relative;
@@ -330,8 +332,8 @@
     width:8px;
     height:8px;
     border-radius:50%;
-    background:var(--silver-bright);
-    box-shadow:0 0 8px rgba(201,162,76,0.7);
+    background:var(--mauve);
+    box-shadow:0 0 8px rgba(201,162,76,0.65);
   }
   .timeline-time{
     display:block;
@@ -364,9 +366,9 @@
   .gallery figure{
     flex:1;
     margin:0;
-    background:var(--silver-bright);
+    background:var(--paper);
     padding:8px 8px 22px;
-    box-shadow:0 12px 22px rgba(0,0,0,0.4);
+    box-shadow:0 10px 20px rgba(90,70,40,0.25);
   }
   .gallery figure:nth-child(1){transform:rotate(-2deg);}
   .gallery figure:nth-child(2){transform:rotate(2deg);margin-top:14px;}
@@ -385,10 +387,10 @@
     width:46px;
     height:46px;
     border-radius:50%;
-    border:1px solid rgba(216,196,143,0.55);
-    background:rgba(12,10,8,0.55);
+    border:1px solid rgba(216,196,143,0.7);
+    background:rgba(40,32,22,0.78);
     backdrop-filter:blur(4px);
-    color:var(--silver-bright);
+    color:#f6edd6;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -423,7 +425,7 @@
     <h1 class="name script">Valeria</h1>
     <div class="hero-meta">
       14 · Nov · 2026
-      <span>7:00 PM</span>
+      <span>6:30 PM</span>
     </div>
   </div>
 
@@ -458,7 +460,7 @@
   <section class="block reveal">
     <h2>Itinerario</h2>
     <div class="timeline">
-      <div class="timeline-item"><span class="timeline-time">7:00 pm</span><span class="timeline-label">Llegada invitados</span></div>
+      <div class="timeline-item"><span class="timeline-time">6:30 pm</span><span class="timeline-label">Llegada invitados</span></div>
       <div class="timeline-item"><span class="timeline-time">7:30 pm</span><span class="timeline-label">Entrada quinceañera</span></div>
       <div class="timeline-item"><span class="timeline-time">8:00 pm</span><span class="timeline-label">Brindis</span></div>
       <div class="timeline-item"><span class="timeline-time">8:30 pm</span><span class="timeline-label">Vals</span></div>
@@ -479,9 +481,9 @@
 
   <section class="block dress reveal">
     <h2>Código de vestimenta</h2>
-    <p>Se sugiere vestimenta elegante.</p>
+    <p>Vestimenta elegante.</p>
     <p>Lindas como siempre.</p>
-    <p>Guapos y elegantes.</p>
+    <p>Guapos y distinguidos.</p>
     <p class="highlight">¡Queremos que brilles junto a Valeria<br>en su noche especial!</p>
     <svg class="dress-illustration" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
       <circle cx="66" cy="36" r="13"/>
@@ -508,11 +510,11 @@
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSekv5clsI1NAXqQhIUw0zrwjLkaqxrKJ7-da82s_1FWSGW8Rg/viewform" target="_blank" rel="noopener">Confirmar asistencia</a>
   </section>
 
-  <footer>Valeria Mora Mideros · XV Años</footer>
+  <footer>Valeria · XV Años</footer>
 </div>
 
 <script>
-  var target = new Date('2026-11-14T19:00:00');
+  var target = new Date('2026-11-14T18:30:00');
   function tick(){
     var now = new Date();
     var diff = target - now;
