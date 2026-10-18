@@ -33,6 +33,8 @@
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--ink);}
+  html{font-size:18px;}
+  p{text-wrap:balance;}
   body{
     font-family:'Cormorant Garamond', serif;
     color:var(--silver-bright);
@@ -62,18 +64,30 @@
   /* HERO */
   .hero{
     position:relative;
-    padding:64px 32px 130px;
+    isolation:isolate;
+    padding:64px 32px 120px;
     text-align:center;
     overflow:hidden;
-    min-height:620px;
+    min-height:640px;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    background-image:
-      linear-gradient(180deg, rgba(12,10,8,0.15) 0%, rgba(12,10,8,0.55) 45%, rgba(12,10,8,0.9) 70%, rgba(246,241,234,1) 100%),
-      url('hero-balloons.png');
-    background-size:cover;
-    background-position:top center;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0; right:0; bottom:0; left:0;
+    z-index:-2;
+    background:url('hero-balloons.png') top center / cover no-repeat;
+    -webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+    mask-image:linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:0; right:0; bottom:0; left:0;
+    z-index:-1;
+    background:radial-gradient(ellipse 85% 30% at 50% 62%, rgba(246,241,234,0.72), rgba(246,241,234,0) 100%);
   }
   .hero-deco{
     position:absolute;
@@ -103,16 +117,16 @@
   .b5{width:54px;height:68px;top:70px;right:40px;}
 
   .eyebrow{
-    font-size:0.85rem;
+    font-size:0.95rem;
     letter-spacing:0.35em;
-    color:#e6c877;
+    color:#5e4423;
     margin:0 0 6px;
     position:relative;
     z-index:1;
   }
   .name{
-    font-size:5rem;
-    color:#f6edd6;
+    font-size:5.6rem;
+    color:#3a2f25;
     margin:0;
     position:relative;
     z-index:1;
@@ -122,7 +136,7 @@
     z-index:1;
     margin-top:18px;
     font-size:1.15rem;
-    color:#e3d2a4;
+    color:#4a3b2b;
     letter-spacing:0.04em;
   }
   .hero-meta span{display:block;margin-top:4px;}
@@ -145,7 +159,7 @@
   .countdown .lbl{
     display:block;
     margin-top:6px;
-    font-size:0.72rem;
+    font-size:0.8rem;
     letter-spacing:0.18em;
     color:var(--mauve);
     text-transform:uppercase;
@@ -158,7 +172,7 @@
   }
   .quote{
     font-style:italic;
-    font-size:1.25rem;
+    font-size:1.35rem;
     color:var(--silver-bright);
     line-height:1.5;
     margin:0 0 32px;
@@ -194,7 +208,7 @@
   .below-photo{
     text-align:center;
     font-style:italic;
-    font-size:1.1rem;
+    font-size:1.2rem;
     color:var(--silver);
     padding:28px 32px 8px;
     line-height:1.5;
@@ -208,14 +222,14 @@
   }
   .block h2{
     font-family:'Tangerine', cursive;
-    font-size:2.8rem;
+    font-size:3.3rem;
     font-weight:400;
     margin:0 0 22px;
     color:var(--silver-bright);
   }
   .details p{
     margin:0 0 4px;
-    font-size:1.15rem;
+    font-size:1.25rem;
     letter-spacing:0.03em;
     color:var(--silver-bright);
   }
@@ -240,7 +254,7 @@
 
   .dress p{
     margin:0 0 4px;
-    font-size:1.1rem;
+    font-size:1.2rem;
     color:var(--silver);
   }
   .dress p.highlight{
@@ -263,7 +277,7 @@
   }
 
   .rsvp p{
-    font-size:1.05rem;
+    font-size:1.15rem;
     color:var(--silver);
     line-height:1.55;
     max-width:340px;
@@ -271,7 +285,7 @@
   }
   .rsvp .no-faltes{
     font-family:'Tangerine', cursive;
-    font-size:2.4rem;
+    font-size:2.9rem;
     color:var(--silver-bright);
     margin:22px 0 0;
   }
@@ -279,13 +293,13 @@
   footer{
     text-align:center;
     padding:28px 20px 44px;
-    font-size:0.8rem;
+    font-size:0.9rem;
     letter-spacing:0.08em;
     color:rgba(56,48,40,0.5);
   }
 
   @media (max-width:380px){
-    .name{font-size:3.6rem;}
+    .name{font-size:4rem;}
     .countdown{gap:16px;}
     .countdown .num{font-size:1.6rem;}
   }
@@ -305,7 +319,7 @@
 
   .timeline{
     position:relative;
-    max-width:300px;
+    max-width:330px;
     margin:0 auto;
     padding-left:30px;
     text-align:left;
@@ -345,13 +359,13 @@
   }
   .timeline-label{
     display:block;
-    font-size:1.15rem;
+    font-size:1.25rem;
     color:var(--silver-bright);
   }
   .punctual{
     text-align:center;
     font-style:italic;
-    font-size:1rem;
+    font-size:1.1rem;
     color:var(--silver);
     margin:30px 0 0;
   }
@@ -444,7 +458,7 @@
       </div>
       <figcaption class="smallcaps">Birthday girl ♥</figcaption>
     </figure>
-    <p class="below-photo">Acompáñame a celebrar mis XV años y<br>hagamos esta noche inolvidable.</p>
+    <p class="below-photo">Acompáñame a celebrar mis XV años y hagamos esta noche inolvidable.</p>
   </div>
 
   <section class="block reveal">
