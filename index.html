@@ -144,12 +144,20 @@
   /* COUNTDOWN */
   .countdown{
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
-    gap:28px;
+    gap:10px 28px;
     padding:36px 20px;
     border-bottom:1px solid var(--line);
   }
   .countdown div{text-align:center;}
+  .cd-title{
+    flex-basis:100%;
+    margin:0 0 6px;
+    text-align:center;
+    font-size:2.6rem;
+    color:var(--silver-bright);
+  }
   .countdown .num{
     font-size:2.1rem;
     color:var(--silver-bright);
@@ -444,6 +452,7 @@
   </div>
 
   <div class="countdown reveal" id="countdown">
+    <p class="cd-title script">Faltan</p>
     <div><span class="num" id="cd-days">00</span><span class="lbl">Días</span></div>
     <div><span class="num" id="cd-hours">00</span><span class="lbl">Hrs</span></div>
     <div><span class="num" id="cd-mins">00</span><span class="lbl">Min</span></div>
@@ -520,7 +529,7 @@
   <section class="block rsvp reveal">
     <p>Es muy importante para nosotros saber si podrás acompañarnos en este día tan especial.</p>
     <p class="no-faltes script">¡No faltes!</p>
-    <p class="punctual" style="margin-top:14px;">Por favor confirma tu asistencia antes del 5 de noviembre.</p>
+    <p class="punctual" style="margin-top:14px;">Por favor confirma tu asistencia antes del 7 de noviembre.</p>
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSekv5clsI1NAXqQhIUw0zrwjLkaqxrKJ7-da82s_1FWSGW8Rg/viewform" target="_blank" rel="noopener">Confirmar asistencia</a>
   </section>
 
